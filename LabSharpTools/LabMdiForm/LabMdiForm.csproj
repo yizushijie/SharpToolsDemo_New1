@@ -35,10 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LabLoginForm\LabLoginForm.cs">
+    <Compile Include="LabLogForm\LabLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LabLoginForm\LabLoginForm.Designer.cs">
+    <Compile Include="LabLogForm\LabLoginForm.Designer.cs">
       <DependentUpon>LabLoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LabMdiForm\LabMdiForm.cs">
@@ -49,6 +49,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LabLogForm\LabLoginForm.resx">
+      <DependentUpon>LabLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabMdiForm\LabMdiForm.resx">
+      <DependentUpon>LabMdiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -28,10 +28,19 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.SuspendLayout();
+			// 
+			// LabMdiForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "LabMainForm";
+			this.ClientSize = new System.Drawing.Size(1331, 768);
+			this.IsMdiContainer = true;
+			this.Name = "LabMdiForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "LabMdiForm";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
