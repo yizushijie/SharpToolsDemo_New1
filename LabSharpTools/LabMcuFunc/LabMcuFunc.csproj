@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props" Condition="Exists('..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22AE2121-9EBB-4772-9C2B-10BB545B4D2F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Harry.LabTools.LabMcuFunc</RootNamespace>
+    <AssemblyName>Harry.LabTools.LabMcuFunc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsBase\CMcuFuncAVR8BitsBase.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsBase\CMcuFuncAVR8BitsBaseData.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsBase\CMcuFuncAVR8BitsBaseFunc.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsBase\CMcuFuncAVR8BitsBaseParam.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVPP\CMcuFuncAVR8BitsHVPP.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVPP\CMcuFuncAVR8BitsHVPPData.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVPP\CMcuFuncAVR8BitsHVPPFunc.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVPP\CMcuFuncAVR8BitsHVPPParam.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVSP\CMcuFuncAVR8BitsHVSP.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVSP\CMcuFuncAVR8BitsHVSPData.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVSP\CMcuFuncAVR8BitsHVSPFunc.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsHVSP\CMcuFuncAVR8BitsHVSPParam.cs" />
+    <Compile Include="CMcuFuncBase\CMcuFuncBase.cs" />
+    <Compile Include="CMcuFuncInfo\CMcuFuncInfoAVR8BitsParam.cs" />
+    <Compile Include="CMcuFuncInfo\CMcuFuncInfoBaseParam.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsISP\CMcuFuncAVR8BitsISPFunc.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsISP\CMcuFuncAVR8BitsISP.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsISP\CMcuFuncAVR8BitsISPData.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsISP\CMcuFuncAVR8BitsISPParam.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsJTAG\CMcuFuncAVR8BitsJTAG.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsJTAG\CMcuFuncAVR8BitsJTAGData.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsJTAG\CMcuFuncAVR8BitsJTAGFunc.cs" />
+    <Compile Include="CMcuFuncAVR8Bits\CMcuFuncAVR8BitsJTAG\CMcuFuncAVR8BitsJTAGParam.cs" />
+    <Compile Include="IMcuFuncInfo\IMcuFuncInfoData.cs" />
+    <Compile Include="IMcuFuncInfo\IMcuFuncInfoEvent.cs" />
+    <Compile Include="IMcuFuncInfo\IMcuFuncInfoFunc.cs" />
+    <Compile Include="IMcuFuncInfo\IMcuFuncInfoAVR8BitsParam.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LabCommPort\LabCommPort.csproj">
+      <Project>{3fbd5434-d5cb-4e6f-95d3-3905e5de178a}</Project>
+      <Name>LabCommPort</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabControlPlus\LabControlPlus.csproj">
+      <Project>{E54A51A6-A054-4F21-AC22-A827B5EF4D36}</Project>
+      <Name>LabControlPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabGenFunc\LabGenFunc.csproj">
+      <Project>{C64AEEA0-7A08-4786-9F1E-BD66608E190E}</Project>
+      <Name>LabGenFunc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabHexEdit\LabHexEdit.csproj">
+      <Project>{72D5A1AE-5BD4-4DC1-AF94-D760DB573C10}</Project>
+      <Name>LabHexEdit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=4.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Costura.Fody.4.1.0\lib\net40\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharp.Xml, Version=1.1.1.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\..\packages\Fody.6.1.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.6.1.0\build\Fody.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Fody.6.1.0\build\Fody.targets" Condition="Exists('..\..\packages\Fody.6.1.0\build\Fody.targets')" />
+</Project>
