@@ -12,30 +12,22 @@ namespace Harry.LabTools.LabGenForm
 	public partial class CPlusForm : Form
 	{
         #region 变量定义
+        /// <summary>
+        /// 
+        /// </summary>
         private ToolTip defaultToolTip=null;
         #endregion
 
         #region 属性定义
-        /// <summary>
-        /// 提示信息
-        /// </summary>
-        [Description("显示提示信息!"), Category("自定义属性")]
-        public virtual ToolTip mToolTip
-        {
-            get
-            {
-                return this.defaultToolTip;
-            }
-        }
+        
+		#endregion
 
-        #endregion
+		#region 构造函数
 
-        #region 构造函数
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CPlusForm():base()
+		/// <summary>
+		/// 
+		/// </summary>
+		public CPlusForm():base()
 		{
 			InitializeComponent();
             //---判断是否为空

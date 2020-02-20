@@ -35,10 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LabLogForm\LabLoginForm.cs">
+    <Compile Include="LabLoginForm\LabLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LabLogForm\LabLoginForm.Designer.cs">
+    <Compile Include="LabLoginForm\LabLoginForm.Designer.cs">
       <DependentUpon>LabLoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LabMdiForm\LabMdiForm.cs">
@@ -49,7 +49,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LabLogForm\LabLoginForm.resx">
+    <EmbeddedResource Include="LabLoginForm\LabLoginForm.resx">
       <DependentUpon>LabLoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LabMdiForm\LabMdiForm.resx">
@@ -95,13 +95,47 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LabCommPort\LabCommPort.csproj">
+      <Project>{3fbd5434-d5cb-4e6f-95d3-3905e5de178a}</Project>
+      <Name>LabCommPort</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabControlPlus\LabControlPlus.csproj">
+      <Project>{E54A51A6-A054-4F21-AC22-A827B5EF4D36}</Project>
+      <Name>LabControlPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabGenControl\LabGenControl.csproj">
+      <Project>{2bdcf93a-3a16-4ac3-a3f6-6e45601f13e5}</Project>
+      <Name>LabGenControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabGenForm\LabGenForm.csproj">
+      <Project>{FBA5494A-61A4-45B7-92FF-AA4F5F06BB49}</Project>
+      <Name>LabGenForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabGenFunc\LabGenFunc.csproj">
+      <Project>{C64AEEA0-7A08-4786-9F1E-BD66608E190E}</Project>
+      <Name>LabGenFunc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabHexEdit\LabHexEdit.csproj">
+      <Project>{72d5a1ae-5bd4-4dc1-af94-d760db573c10}</Project>
+      <Name>LabHexEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabIniFile\LabIniFile.csproj">
+      <Project>{fcb39572-bbb0-4fd3-bd78-8b60e43bdf10}</Project>
+      <Name>LabIniFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LabMcuForm\LabMcuForm.csproj">
+      <Project>{d43876d1-cac9-4d5d-8041-2b5c67643128}</Project>
+      <Name>LabMcuForm</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\Fody.6.1.0\build\Fody.targets" Condition="Exists('..\..\packages\Fody.6.1.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props'))" />
     <Error Condition="!Exists('..\..\packages\Fody.6.1.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.6.1.0\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Costura.Fody.4.1.0\build\Costura.Fody.props'))" />
   </Target>
-  <Import Project="..\..\packages\Fody.6.1.0\build\Fody.targets" Condition="Exists('..\..\packages\Fody.6.1.0\build\Fody.targets')" />
 </Project>

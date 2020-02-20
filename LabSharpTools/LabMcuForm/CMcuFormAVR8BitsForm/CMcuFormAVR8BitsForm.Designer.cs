@@ -31,8 +31,8 @@
 			this.components = new System.ComponentModel.Container();
 			this.menuStrip_ChipMenu = new System.Windows.Forms.MenuStrip();
 			this.ToolStripMenuItem_File = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolStripMenuItem_Cmd = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_Edit = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_Cmd = new System.Windows.Forms.ToolStripMenuItem();
 			this.ToolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.timer_ChipRTCTime = new System.Windows.Forms.Timer(this.components);
 			this.toolTip_ChipClock = new System.Windows.Forms.ToolTip(this.components);
@@ -41,7 +41,7 @@
 			this.panel_ChipMsg = new System.Windows.Forms.Panel();
 			this.cRichTextBoxEx_ChipMsg = new Harry.LabTools.LabControlPlus.CRichTextBoxEx();
 			this.panel_ChipFunc = new System.Windows.Forms.Panel();
-			this.cMcuFormAVR8BitsFuseAndLockControl_ChipFuse = new CMcuFormAVR8BitsFuseAndLockControl();
+			this.cMcuFormAVR8BitsFuseAndLockControl_ChipFuse = new Harry.LabTools.LabMcuForm.CMcuFormAVR8BitsFuseAndLockControl();
 			this.panel_ChipCheckFunc = new System.Windows.Forms.Panel();
 			this.label_EepromSize = new System.Windows.Forms.Label();
 			this.label_Eeprom = new System.Windows.Forms.Label();
@@ -147,8 +147,8 @@
 			this.menuStrip_ChipMenu.GripMargin = new System.Windows.Forms.Padding(2);
 			this.menuStrip_ChipMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_File,
-            this.ToolStripMenuItem_Cmd,
             this.ToolStripMenuItem_Edit,
+            this.ToolStripMenuItem_Cmd,
             this.ToolStripMenuItem_About});
 			this.menuStrip_ChipMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.menuStrip_ChipMenu.Location = new System.Drawing.Point(2, 2);
@@ -168,19 +168,19 @@
 			this.ToolStripMenuItem_File.Size = new System.Drawing.Size(55, 20);
 			this.ToolStripMenuItem_File.Text = "文件(&Z)";
 			// 
-			// ToolStripMenuItem_Cmd
-			// 
-			this.ToolStripMenuItem_Cmd.Name = "ToolStripMenuItem_Cmd";
-			this.ToolStripMenuItem_Cmd.Padding = new System.Windows.Forms.Padding(2);
-			this.ToolStripMenuItem_Cmd.Size = new System.Drawing.Size(55, 20);
-			this.ToolStripMenuItem_Cmd.Text = "命令(&Y)";
-			// 
 			// ToolStripMenuItem_Edit
 			// 
 			this.ToolStripMenuItem_Edit.Name = "ToolStripMenuItem_Edit";
 			this.ToolStripMenuItem_Edit.Padding = new System.Windows.Forms.Padding(2);
 			this.ToolStripMenuItem_Edit.Size = new System.Drawing.Size(55, 20);
 			this.ToolStripMenuItem_Edit.Text = "编辑(&X)";
+			// 
+			// ToolStripMenuItem_Cmd
+			// 
+			this.ToolStripMenuItem_Cmd.Name = "ToolStripMenuItem_Cmd";
+			this.ToolStripMenuItem_Cmd.Padding = new System.Windows.Forms.Padding(2);
+			this.ToolStripMenuItem_Cmd.Size = new System.Drawing.Size(55, 20);
+			this.ToolStripMenuItem_Cmd.Text = "命令(&Y)";
 			// 
 			// ToolStripMenuItem_About
 			// 

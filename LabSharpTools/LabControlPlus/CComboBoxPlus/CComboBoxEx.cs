@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,37 @@ namespace Harry.LabTools.LabControlPlus
 {
 	public partial class CComboBoxEx : ComboBox
 	{
+		#region 变量定义
+		/// <summary>
+		/// 
+		/// </summary>
+		private ToolTip defaultToolTip = null;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		private string defaultToolTipText = string.Empty;
+
+		#endregion
+
 		#region	属性定义
+		
+		/// <summary>
+		/// 提示信息
+		/// </summary>
+		[Description("显示信息内容!"), Category("自定义属性")]
+		public virtual string mToolTipText
+		{
+			get
+			{
+				return this.defaultToolTipText;
+			}
+			set
+			{
+				this.defaultToolTipText=value;
+			}
+		}
+
 		/// <summary>
 		/// 系统类型
 		/// </summary>
