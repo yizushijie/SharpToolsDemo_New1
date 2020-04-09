@@ -90,7 +90,7 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				CHexFile loadFlash = new CHexFile(flashFile.FileName);
 				//---校验文件的解析
-				if (loadFlash.mIsOK)
+				if (loadFlash.mOK)
 				{
 					flash = new byte[loadFlash.mSTOPAddr];
 					//---填充默认数据是0xFF
@@ -279,7 +279,7 @@ namespace Harry.LabTools.LabMcuFunc
 			{
 				CHexFile loadEeprom = new CHexFile(eepromFile.FileName);
 				//---校验文件的解析
-				if (loadEeprom.mIsOK)
+				if (loadEeprom.mOK)
 				{
 					eeprom = new byte[loadEeprom.mSTOPAddr];
 					//---填充默认数据是0xFF

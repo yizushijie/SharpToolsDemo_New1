@@ -25,7 +25,7 @@ namespace Harry.LabTools.LabHexEdit
 		/// <summary>
 		/// 数据是否有效
 		/// </summary>
-		private bool defaultIsOK = false;
+		private bool defaultOK = false;
 
 		/// <summary>
 		/// 
@@ -64,11 +64,11 @@ namespace Harry.LabTools.LabHexEdit
 		/// <summary>
 		/// 
 		/// </summary>
-		public virtual bool mIsOK
+		public virtual bool mOK
 		{
 			get
 			{
-				return this.defaultIsOK;
+				return this.defaultOK;
 			}
 		}
 
@@ -169,7 +169,7 @@ namespace Harry.LabTools.LabHexEdit
 		/// <param name="hexPath"></param>
 		public CHexFile(string hexPath)
 		{
-			this.defaultIsOK = this.AnalyseHexFile(hexPath);
+			this.defaultOK = this.AnalyseHexFile(hexPath);
 		}
 
 		/// <summary>
@@ -346,11 +346,18 @@ namespace Harry.LabTools.LabHexEdit
 			byte[] _return = null;
 			byte[] buffer = null;
 			long myAddr = this.mSTOPAddr;
+			int i = 0;
 			//---校验数据长度
 			if (maxSize < myAddr)
 			{
 				maxSize = myAddr;
 			}
+			//---必须保证maxSize是偶数，便于后面的处理
+			if ((maxSize&0x01)!=0)
+			{
+				maxSize += 1;
+			}
+			//---申请数据缓存区
 			_return= new byte[maxSize];
 			//---校验缓存区的申请
 			if (_return == null)
@@ -369,7 +376,7 @@ namespace Harry.LabTools.LabHexEdit
 			//---用指定的数据填充缓存区
 			CGenFuncMem.GenFuncMemset(ref _return, _return.Length, fillVal);
 			//---将解析后的数据填充到数据缓存区
-			for (int i = 0; i < this.defaultCHexLine.Count; i++)
+			for (i = 0; i < this.defaultCHexLine.Count; i++)
 			{
 				//---数据类型的解析
 				switch (this.defaultCHexLine[i].Type)
@@ -403,7 +410,16 @@ namespace Harry.LabTools.LabHexEdit
 			//---Hex文件默认是低位在前高位在后，判断是否需要将数据转换成高位在前低位在后的格式
 			if (isHighFirst==true)
 			{
+				//---执行高低字节的数据交换
 				byte[] _returnTemp = new byte[_return.Length];
+				//---数据交换
+				for ( i = 0; i < (_return.Length/2); i++)
+				{
+					_returnTemp[2 * i]		= _return[2 * i + 1];
+					_returnTemp[2 * i+1]	= _return[2 * i];
+				}
+				//---拷贝数据
+				Array.Copy(_returnTemp,_return,_return.Length);
 			}
 			return _return;
 		}
@@ -582,7 +598,7 @@ namespace Harry.LabTools.LabHexEdit
 			byte[] buffer = null;
 			if ((this.defaultCHexLine == null) || (this.defaultCHexLine.Count == 0))
 			{
-				this.defaultIsOK = false;
+				this.defaultOK = false;
 				_return = 0;
 			}
 			else
@@ -598,7 +614,7 @@ namespace Harry.LabTools.LabHexEdit
 						break;
 					case HexType.END_OF_FILE_RECORD:
 						_return = 0;
-						this.defaultIsOK = false;
+						this.defaultOK = false;
 						break;
 					case HexType.EXTEND_SEGMENT_ADDRESS_RECORD:
 						buffer = new byte[2] { this.defaultCHexLine[0].InfoData[1], this.defaultCHexLine[0].InfoData[0] };
@@ -620,7 +636,7 @@ namespace Harry.LabTools.LabHexEdit
 						_return = BitConverter.ToUInt32(buffer, 0);
 						break;
 					default:
-						this.defaultIsOK = false;
+						this.defaultOK = false;
 						break;
 				}
 			}
@@ -641,7 +657,7 @@ namespace Harry.LabTools.LabHexEdit
 			if ((this.defaultCHexLine == null) || (this.defaultCHexLine.Count == 0))
 			{
 				_return = 0;
-				this.defaultIsOK = false;
+				this.defaultOK = false;
 			}
 			else
 			{
@@ -651,7 +667,7 @@ namespace Harry.LabTools.LabHexEdit
 					switch (this.defaultCHexLine[i].Type)
 					{
 						case HexType.DATA_RECORD:                           //0
-																			//---当前数据的地址，不包含扩展线性地址
+							//---当前数据的地址，不包含扩展线性地址
 							tempAddr = (long)(this.defaultCHexLine[i].Addr + this.defaultCHexLine[i].Length);
 							//---用来标识数据记录文件,并校验数据地址是否超出64K
 							if ((lastHexType == HexType.DATA_RECORD) || ((_return & 0xFFFF0000) == 0))
@@ -725,6 +741,11 @@ namespace Harry.LabTools.LabHexEdit
 							break;
 					}
 				}
+			}
+			//---保证最后的数据必须是偶数
+			if ((_return&0x01)!=0)
+			{
+				_return += 1;
 			}
 			this.defaultSTOPAddr= _return;
 		}

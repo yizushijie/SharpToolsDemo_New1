@@ -6,7 +6,7 @@
     <ProjectGuid>{FBA5494A-61A4-45B7-92FF-AA4F5F06BB49}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Harry.LabTools.LabGenForm</RootNamespace>
-    <AssemblyName>Harry.LabTools.LabGenForm</AssemblyName>
+    <AssemblyName>LabGenForm</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -37,11 +37,11 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSharp.Xml, Version=1.1.1.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CSharp.Xml.1.1.1.0\lib\net40\CSharp.Xml.dll</HintPath>
+    <Reference Include="CSharp.Xml, Version=1.1.3.0, Culture=neutral, PublicKeyToken=872ff9e93c410e95, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CSharp.Xml.1.1.3.0\lib\net40\CSharp.Xml.dll</HintPath>
     </Reference>
-    <Reference Include="DSControls, Version=1.0.7311.39803, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DSControls.1.0.3.48\lib\net40\DSControls.dll</HintPath>
+    <Reference Include="DSControls, Version=1.0.7402.35459, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DSControls.1.0.3.58\lib\net40\DSControls.DLL</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
